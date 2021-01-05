@@ -36,6 +36,8 @@
 #
 # We will raise an `ArgumentError` exception to let the caller know that
 # their function arguments were incorrect.
-def fizz_buzz(n:, x: 3, y: 5)
-  raise NotImplementedError # TODO
+def fizz_buzz(n, x: 3, y:5 )
+  if n<=0 or x==0 or y==0
+     raise NotImplementedError # TODO
+    end
 end
