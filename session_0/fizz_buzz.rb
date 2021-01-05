@@ -36,24 +36,24 @@
 #
 # We will raise an `ArgumentError` exception to let the caller know that
 # their function arguments were incorrect.
-def fizz_buzz(n, x: 3, y:5 )
-  if n<=0 or x==0 or y==0 then
-     raise NotImplementedError # TODO
+def fizz_buzz(n:, x: 3, y: 5 )
+  if (n < 0) || (x<= 0) || (y<=0) then
+     raise ArgumentError # TODO
     end
    a = []
    for i in 1..n do
      str = ""
      if i % x == 0 then
-     str += "Fizz"
+     str << "Fizz"
      end
      if i % y == 0 then
-     str += "Buzz"
+     str << "Buzz"
      end
      
      if str== "" then
-     str =i.to_s
+     str << i.to_s
      end
-     a[i-1] = str
+   a.append(str)
 
    end
 
