@@ -1,5 +1,5 @@
-#require_relative 'fizz_buzz'
-=begin
+require_relative 'fizz_buzz'
+
 require 'minitest/autorun'
 
 class FizzBuzzTest < Minitest::Test
@@ -79,22 +79,6 @@ class FizzBuzzTest < Minitest::Test
   end
 end
 
-=end
-def fizz_buzz(n,x:3,y:5)
-   str = ""
-   for i in 1..n+1 do
-     str = ""
-     if i % x == 0
-     str += "Fizz"
-     end
-     if i % y == 0
-     str += "Buzz"
-     end
-     
-     if str== ""
-     str =i.to_s
-     end
-     puts(str)
-   end
-end 
-fizz_buzz 10
+
+
+
