@@ -55,12 +55,12 @@ class Item
   # Note: If there are no items for category, stock price for category
   # should be zero.
   def self.stock_price_by_category(items)
-    total_category_price = {
-    1 => 0,
-    2 => 0,
-    3 => 0,
-    4 => 0 
-    }
+    
+    total_category_price = Hash.new(0)
+    
+    CATEGORIES.each_key do |x|
+    total_category_price.store(x,0)
+    end
     
     items.each do |x|
     total_category_price[x.category_id] += x.current_price * x.quantity
