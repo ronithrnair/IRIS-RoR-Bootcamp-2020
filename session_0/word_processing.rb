@@ -38,13 +38,19 @@ def similarity_score(word_1, word_2)
   size = [word_1.size,word_2.size].min # TODO
   score = 0
   for i in 0..size-1
-   if word_1[i].downcase == word_2[i].downcase 
-    score+=1;
-   else
-    break
-   end
+    
+    if word_1[i].downcase == word_2[i].downcase 
+       score+=1;
+    
+    else
+       break
+    
+    end
+  
   end
-return score
+  
+  return score
+
 end
 
 # Given a chosen word and an array of words, return an array of word(s)
@@ -55,14 +61,19 @@ def most_similar_words(chosen_word, words)
   
   words.each do |a|
   score = similarity_score(chosen_word,a)
-   if score > max_score
-    max_score = score
-    sim_words = [a] 
-   elsif score == max_score
-    sim_words.push(a)
-   end
+    if score > max_score
+       max_score = score
+       sim_words = [a] 
+   
+    elsif score == max_score
+       sim_words.push(a)
+   
+    end
+  
   end
- return sim_words
+
+  return sim_words
+
 end
 
 

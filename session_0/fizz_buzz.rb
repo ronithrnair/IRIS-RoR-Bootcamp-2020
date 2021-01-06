@@ -37,22 +37,29 @@
 # We will raise an `ArgumentError` exception to let the caller know that
 # their function arguments were incorrect.
 def fizz_buzz(n:, x: 3, y: 5 )
-    if (n < 0) || (x<= 0) || (y<=0)
+  if (n < 0) || (x<= 0) || (y<=0)
      raise ArgumentError # TODO
-    end
-    a = (1..n).to_a
-    a.map do |i| 
-     str = ""
-     if i % x == 0 
-     str << "Fizz"
-     end
-     if i % y == 0 
-     str << "Buzz"
-     end
+  end
+    
+  a = (1..n).to_a
+  a.map do |i| 
+    
+    str = ""
      
-     if str== "" 
-     str << i.to_s
-     end
+    if i % x == 0 
+       str << "Fizz"
+    end
+     
+    if i % y == 0 
+       str << "Buzz"
+    end
+     
+    if str== "" 
+       str << i.to_s
+    end
+     
      k = str
-   end
+  
+  end
+
 end 
