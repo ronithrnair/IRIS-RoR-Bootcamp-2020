@@ -65,6 +65,10 @@ class Item
     items.each do |x|
     total_category_price[x.category_id] += x.current_price * x.quantity
   end
+
  return total_category_price
+
+ 
+
  end
 end
