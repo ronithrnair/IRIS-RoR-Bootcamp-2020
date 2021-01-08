@@ -36,21 +36,8 @@ end
 # similarity score (an integer).
 def similarity_score(word_1, word_2)
   size = [word_1.size,word_2.size].min # TODO
-  score = 0
-  for i in 0..size-1
-    
-    if word_1[i].downcase == word_2[i].downcase 
-       score+=1;
-    
-    else
-       break
-    
-    end
-  
-  end
-  
+  score = (0..size).find { |i| i==size || (word_1[i].downcase != word_2[i].downcase)}
   return score
-
 end
 
 # Given a chosen word and an array of words, return an array of word(s)
@@ -75,5 +62,6 @@ def most_similar_words(chosen_word, words)
   return sim_words
 
 end
+
 
 
